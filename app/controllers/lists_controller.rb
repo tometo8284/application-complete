@@ -8,6 +8,7 @@ class ListsController < ApplicationController
     list = List.new(list_params)
     # 3. データをデータベースに保存するためのsaveメソッド実行
     list.save
+    flash[:notice] = "投稿が成功しました"
     # 4. トップ画面へリダイレクト
     redirect_to list_path(list.id)
   end
